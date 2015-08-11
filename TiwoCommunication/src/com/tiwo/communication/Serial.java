@@ -15,9 +15,9 @@ import java.util.Enumeration;
 public class Serial {
 
 	private ArrayList<String> ports;
-	private SerialPort serialPort;
+	public SerialPort serialPort;
 	private static Serial instance;
-	private boolean isConnected;
+	public boolean isConnected;
 	
 	public static Serial getInstance(){
 		if(instance == null) instance = new Serial();
