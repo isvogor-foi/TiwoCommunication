@@ -78,9 +78,17 @@ public class Serial {
             }
         }   
     }
+    
+    public void disconnect(){
+    	if(isConnected){
+    		serialPort.close();
+    		isConnected = false;
+    	}
+    }	
 
     public void sendMessage(String message) throws IOException{
     	OutputStream out = serialPort.getOutputStream();
+    	
 		try {
 			System.out.println("Sent: " + message);
 			byte[] array = message.getBytes();
